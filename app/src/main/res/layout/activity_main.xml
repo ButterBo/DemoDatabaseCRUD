@@ -11,7 +11,7 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enter data to be insert here:" />
+        android:text="@string/hint1" />
 
     <EditText
         android:id="@+id/editTextTextPersonName"
@@ -32,7 +32,7 @@
             android:layout_weight="1"
             android:padding="1dp"
             android:layout_margin="3dp"
-            android:text="Insert" />
+            android:text="@string/add" />
 
         <Button
             android:id="@+id/buttonEdit"
@@ -41,7 +41,7 @@
             android:layout_weight="1"
             android:padding="1dp"
             android:layout_margin="3dp"
-            android:text="Edit" />
+            android:text="@string/edit" />
 
         <Button
             android:id="@+id/buttonRetrieve"
@@ -50,7 +50,7 @@
             android:layout_weight="1"
             android:padding="1dp"
             android:layout_margin="3dp"
-            android:text="Retrieve" />
+            android:text="@string/view" />
     </LinearLayout>
 
     <ListView
