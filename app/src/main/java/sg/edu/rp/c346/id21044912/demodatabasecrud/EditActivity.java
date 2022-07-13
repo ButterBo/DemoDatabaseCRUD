@@ -13,7 +13,7 @@ public class EditActivity extends AppCompatActivity {
 
     TextView tvID;
     EditText etContent;
-    Button btnUpdate, btnDelete;
+    Button btnUpdate, btnDelete, btnReturn;
     Note data;
 
     @Override
@@ -25,6 +25,7 @@ public class EditActivity extends AppCompatActivity {
         etContent = findViewById(R.id.etContent);
         btnUpdate = findViewById(R.id.btnUpdate);
         btnDelete = findViewById(R.id.btnDelete);
+        btnReturn = findViewById(R.id.btnreturn);
 
         Intent i = getIntent();
         data = (Note) i.getSerializableExtra("data");
@@ -52,6 +53,11 @@ public class EditActivity extends AppCompatActivity {
             }
         });
 
-
+        btnReturn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 }
