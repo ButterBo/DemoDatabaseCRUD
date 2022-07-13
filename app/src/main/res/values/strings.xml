@@ -4,4 +4,8 @@
     <string name="add">Insert</string>
     <string name="edit">Edit</string>
     <string name="view">Retrieve</string>
+    <string name="id">ID:</string>
+    <string name="content">Content:</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
 </resources>

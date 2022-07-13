@@ -2,6 +2,7 @@ package sg.edu.rp.c346.id21044912.demodatabasecrud;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         btnAdd = findViewById(R.id.buttonInsert);
         btnEdit = findViewById(R.id.buttonEdit);
         btnRetrieve = findViewById(R.id.buttonRetrieve);
+        etContent = findViewById(R.id.editText);
         tvDBContent = findViewById(R.id.textView);
         lv = findViewById(R.id.lv);
         al = new ArrayList<Note>();
@@ -48,11 +50,11 @@ public class MainActivity extends AppCompatActivity {
                     al.clear();
                     al.addAll(dbh.getAllNotes());
                     aa.notifyDataSetChanged();
-                    Toast.makeText(MainActivity.this, "Insert successful",
-                            Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Insert successful", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+
         btnRetrieve.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,6 +64,26 @@ public class MainActivity extends AppCompatActivity {
                 aa.notifyDataSetChanged();
             }
         });
+
+        btnEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Note target = al.get(0);
+
+                Intent i = new Intent(MainActivity.this,
+                        EditActivity.class);
+                i.putExtra("data", target);
+                startActivity(i);
+            }
+        });
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        btnRetrieve.performClick();
     }
 
 }
